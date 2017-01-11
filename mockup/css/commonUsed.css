@@ -1,0 +1,68 @@
+body {
+    font-family: "微軟正黑體", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+h1 {
+    font-size: 36px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* common use css class */
+.hide {
+    display: none
+}
+.float_left{
+	float: left;
+}
+.float_right{
+	float: right;
+}
+.float_clear{
+	clear: both;
+}
+.text_center {
+    text-align: center
+}
+.disable a {
+    cursor: not-allowed
+}
+.input_label {
+    margin-top: 7px
+}
+.height_40 {
+    height: 40px
+}
+.margin_left_20 {
+    margin-left: 20px
+}
+.form_control_inline {
+    display: inline-block;
+    width: auto
+}
+.table_btn_group span,.table_btn_group a {
+    margin-left: 15px;
+    font-size: 20px
+}
+.table_btn_group span:first-child,.table_btn_group a:first-child {
+    margin-left: 0px
+}
+
+/* customorize below  */
+
+
+
+
+
+

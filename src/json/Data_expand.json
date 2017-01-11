@@ -1,0 +1,164 @@
+[
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1101",
+    "sname": "Allen",
+    "sclass": "first",
+    "type": "mandarin",
+    "score": 95
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1101",
+    "sname": "Allen",
+    "sclass": "first",
+    "type": "english",
+    "score": 43
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1101",
+    "sname": "Allen",
+    "sclass": "first",
+    "type": "math",
+    "score": 25
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1102",
+    "sname": "Mike",
+    "sclass": "first",
+    "type": "mandarin",
+    "score": 55
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1102",
+    "sname": "Mike",
+    "sclass": "first",
+    "type": "english",
+    "score": 74
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1102",
+    "sname": "Mike",
+    "sclass": "first",
+    "type": "math",
+    "score": 25
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1103",
+    "sname": "Kevin",
+    "sclass": "first",
+    "type": "mandarin",
+    "score": 74
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1103",
+    "sname": "Kevin",
+    "sclass": "first",
+    "type": "english",
+    "score": 85
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "E1103",
+    "sname": "Kevin",
+    "sclass": "first",
+    "type": "math",
+    "score": 33
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1101",
+    "sname": "Mark",
+    "sclass": "second",
+    "type": "mandarin",
+    "score": 66
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1101",
+    "sname": "Mark",
+    "sclass": "second",
+    "type": "english",
+    "score": 33
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1101",
+    "sname": "Mark",
+    "sclass": "second",
+    "type": "math",
+    "score": 95
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1102",
+    "sname": "Stepheny",
+    "sclass": "second",
+    "type": "mandarin",
+    "score": 36
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1102",
+    "sname": "Stepheny",
+    "sclass": "second",
+    "type": "english",
+    "score": 74
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1102",
+    "sname": "Stepheny",
+    "sclass": "second",
+    "type": "math",
+    "score": 42
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1103",
+    "sname": "Vivien",
+    "sclass": "second",
+    "type": "mandarin",
+    "score": 73
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1103",
+    "sname": "Vivien",
+    "sclass": "second",
+    "type": "english",
+    "score": 82
+  },
+  {
+    "age": 25,
+    "name": "john",
+    "sid": "G1103",
+    "sname": "Vivien",
+    "sclass": "second",
+    "type": "math",
+    "score": 37
+  }
+]

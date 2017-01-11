@@ -1,0 +1,120 @@
+{
+  "age": 25,
+  "name": "john",
+  "class": [
+    {
+      "sid": "E1101",
+      "sname": "Allen",
+      "sclass": "first",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 95
+        },
+        {
+          "type": "english",
+          "score": 43
+        },
+        {
+          "type": "math",
+          "score": 25
+        }
+      ]
+    },
+    {
+      "sid": "E1102",
+      "sname": "Mike",
+      "sclass": "first",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 55
+        },
+        {
+          "type": "english",
+          "score": 74
+        },
+        {
+          "type": "math",
+          "score": 25
+        }
+      ]
+    },
+    {
+      "sid": "E1103",
+      "sname": "Kevin",
+      "sclass": "first",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 74
+        },
+        {
+          "type": "english",
+          "score": 85
+        },
+        {
+          "type": "math",
+          "score": 33
+        }
+      ]
+    },
+    {
+      "sid": "G1101",
+      "sname": "Mark",
+      "sclass": "second",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 66
+        },
+        {
+          "type": "english",
+          "score": 33
+        },
+        {
+          "type": "math",
+          "score": 95
+        }
+      ]
+    },
+    {
+      "sid": "G1102",
+      "sname": "Stepheny",
+      "sclass": "second",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 36
+        },
+        {
+          "type": "english",
+          "score": 74
+        },
+        {
+          "type": "math",
+          "score": 42
+        }
+      ]
+    },
+    {
+      "sid": "G1103",
+      "sname": "Vivien",
+      "sclass": "second",
+      "grade": [
+        {
+          "type": "mandarin",
+          "score": 73
+        },
+        {
+          "type": "english",
+          "score": 82
+        },
+        {
+          "type": "math",
+          "score": 37
+        }
+      ]
+    }
+  ]
+}

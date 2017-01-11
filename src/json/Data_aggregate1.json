@@ -1,0 +1,32 @@
+[
+  {
+    "sid": "E1101",
+    "sclass": "first",
+    "score_SUM": 163
+  },
+  {
+    "sid": "E1102",
+    "sclass": "first",
+    "score_SUM": 154
+  },
+  {
+    "sid": "E1102",
+    "sclass": "first",
+    "score_SUM": 192
+  },
+  {
+    "sid": "G1101",
+    "sclass": "second",
+    "score_SUM": 194
+  },
+  {
+    "sid": "G1102",
+    "sclass": "second",
+    "score_SUM": 152
+  },
+  {
+    "sid": "G1103",
+    "sclass": "second",
+    "score_SUM": 192
+  }
+]

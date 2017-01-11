@@ -1,0 +1,21 @@
+#pageTab {
+	width: 70vw;
+	height: 75vh;
+	margin: 20px;
+}
+.content {
+	height: 200px;
+}
+
+.clearfix .title img {
+	height: 20px;
+	width: 20px;
+}
+
+#pageTab > ul > li {
+    border-radius: 5px 5px 0px 0px;   
+}
+
+#pageTab > ul > li {
+    float: right;
+}

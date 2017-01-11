@@ -1,0 +1,40 @@
+#pageTab {
+    /*width: 400px;
+    height: 200px;*/
+}
+#pageTab > ul {
+    display: block;
+}
+.clearfix {
+    zoom: 1;
+}
+ul {
+    list-style: none;
+}
+#pageTab > ul > li {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 15px;
+    border: 1px #ccc solid;
+    float: left;
+    margin: 0 -1px -1px 0;
+    background: #eee;
+}
+
+#pageTab > ul > li {
+    border-radius: 20px 20px 0px 0px;   
+}
+
+#pageTab > ul > li.active {
+    background: #fff;
+    border-bottom: 1px #fff solid;
+}
+#pageTab > .content {
+    clear: both;
+    padding: 15px;
+    border: 1px #ccc solid;
+    line-height: 18px;
+    color: #555;
+    background-color: #FFF;
+}

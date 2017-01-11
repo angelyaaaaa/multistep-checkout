@@ -1,0 +1,32 @@
+[
+  {
+    "type": "mandarin",
+    "sclass": "first",
+    "score_SUM": 224
+  },
+  {
+    "type": "english",
+    "sclass": "first",
+    "score_SUM": 202
+  },
+  {
+    "type": "math",
+    "sclass": "first",
+    "score_SUM": 83
+  },
+  {
+    "type": "mandarin",
+    "sclass": "second",
+    "score_SUM": 175
+  },
+  {
+    "type": "english",
+    "sclass": "second",
+    "score_SUM": 189
+  },
+  {
+    "type": "math",
+    "sclass": "second",
+    "score_SUM": 174
+  }
+]
