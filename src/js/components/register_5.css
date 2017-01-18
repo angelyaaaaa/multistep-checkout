@@ -1,0 +1,27 @@
+.ownerInfo {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.ownerInfo .choice {
+    width: 60%;
+    margin: auto;
+    text-align: left;
+}
+
+.paymentInfo {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.paymentInfo .choice {
+    width: 60%;
+    margin: auto;
+    text-align: left;
+}

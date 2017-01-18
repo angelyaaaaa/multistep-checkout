@@ -1,0 +1,20 @@
+.comment-list .choices {
+    border: 1px solid;
+    text-align: center;
+}
+.comment-list .choice {
+    width: 25%;
+    margin: 10px;
+}
+
+.comment-list .feeTables {
+    width: 92%;
+    min-height: 180px;
+    margin: auto;
+    text-align: center;
+}
+.comment-list .feeTable {
+    width: 32%;
+    margin: 3px;
+    display: inline-block;
+}

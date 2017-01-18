@@ -1,7 +1,8 @@
 import React from 'react';
-// import Formsy from 'formsy-react';
+import {FormGroup, Radio} from 'react-bootstrap';
 import StateLight from './light';
-
+import './register_3.css';
+import './page.css';
 
 
 export default class Register3 extends React.Component {
@@ -16,37 +17,46 @@ export default class Register3 extends React.Component {
 
 
 	saveAndContinue(e) {
-	    e.preventDefault()
+		e.preventDefault();
 
-	    // Get values via this.refs
-	    // var data = {
-	    //   name     : this.refs.name.getDOMNode().value,
-	    //   password : this.refs.password.getDOMNode().value,
-	    //   email    : this.refs.email.getDOMNode().value,
-	    // }
+		// Get values via this.refs
+		// var data = {
+		//   name     : this.refs.name.getDOMNode().value,
+		//   password : this.refs.password.getDOMNode().value,
+		//   email    : this.refs.email.getDOMNode().value,
+		// }
 
-	    // this.props.saveValues(data)
-	    this.props.goNextStep()
-  	}
+		// this.props.saveValues(data)
+		this.props.goNextStep();
+	}
 
-  	backStep(e) {
-  		e.preventDefault();
-  		this.props.goPreviousStep();
-  	}
+	backStep(e) {
+		e.preventDefault();
+		this.props.goPreviousStep();
+	}
 
 	render() {
 		return (
-			<div className="comment-list">
-				<StateLight nowStep={3} goJumpStep={this.props.goJumpStep}></StateLight><br/>
-		       	
-				<label>Purpose</label><br/>
-				<input type="radio" name="location" value="myself"/> for myself<br/>
-				<input type="radio" name="location" value="enterprise"/> for enterprise<br/>
-				<input type="radio" name="location" value="others"/> for others<br/>
-  
-				      
-				<button onClick={ this.backStep }>Back Step</button>
-		      	<button onClick={ this.saveAndContinue }>Save and Continue</button>
+			<div className="page">
+				<div className="comment-list">
+					<StateLight nowStep={3} goJumpStep={this.props.goJumpStep}></StateLight><br/>
+
+					<div className="purpose">
+						<label>Purpose</label>
+						
+						<FormGroup className="choice">
+							<Radio name="purpose"> For myself</Radio>
+							<Radio name="purpose"> For enterprise</Radio>
+							<Radio name="purpose"> For others</Radio>
+						</FormGroup>
+					</div>
+					
+					<div className="pageCtrl">
+						<button className="float-left" onClick={ this.backStep }>Back Step</button>
+						<button className="float-right" onClick={ this.saveAndContinue }>Save and Continue</button>
+						<div className="float-clear"></div>
+					</div>					
+				</div>
 			</div>
 		);
 	}

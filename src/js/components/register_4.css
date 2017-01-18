@@ -1,0 +1,56 @@
+.patentCertif {
+    width: 90%;
+    height: 350px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+
+.patentCertif .dropZone {
+    width: 35%;
+    height: 95%;
+    border-width: 2px;
+    border-color: #666;
+    border-style: dashed;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+}
+
+.patentCertif .active {
+	background: lightgrey;    
+}
+.patentCertif #dropSep {
+	display: inline-block;
+	width: 10%;
+	height: 95%;
+}
+.patentCertif .preview {
+	width: 90%;
+	height: 90%;
+}
+.patentCertif .downloadIcon {
+	width: 30%;
+	height: 30%;
+}
+
+
+
+
+.patentInfo {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.patentInfo .choice {
+    width: 60%;
+    margin: auto;
+    text-align: left;
+}

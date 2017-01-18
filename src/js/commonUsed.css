@@ -1,0 +1,71 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+h1 {
+    font-size: 36px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* common use css class */
+.hide {
+    display: none;
+}
+.vHide {
+    visibility: hidden;    
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.float-clear{
+	clear: both;
+}
+.text-center {
+    text-align: center
+}
+.disable a {
+    cursor: not-allowed
+}
+.input-label {
+    margin-top: 7px
+}
+.height-40 {
+    height: 40px
+}
+.margin-left-20 {
+    margin-left: 20px
+}
+.form-control-inline {
+    display: inline-block;
+    width: auto
+}
+.table-btn-group span,.table-btn-group a {
+    margin-left: 15px;
+    font-size: 20px
+}
+.table-btn-group span:first-child,.table-btn-group a:first-child {
+    margin-left: 0px
+}
+
+/* customorize below  */
+
+
+
+
+
+

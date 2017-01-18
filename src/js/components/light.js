@@ -1,57 +1,71 @@
 import React from 'react';
+import {Nav, NavItem } from 'react-bootstrap';
+import '../commonUsed.css';
+import './light.css';
 
 export default class StateLight extends React.Component {
-	constructor(props, context) {
-		super(props, context);
-		this.state = { 
-			light: [false, false, false, false, false]
-			// dateCont: dateContJson[0]
-		};
-		// this.jumpToAnother = this.jumpToAnother.bind(this);
-	}
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            light: [false, false, false, false, false]
+                // dateCont: dateContJson[0]
+        };
+        // this.jumpToAnother = this.jumpToAnother.bind(this);
+    }
 
-	componentWillMount() {
-		console.log(this.props.nowStep);
-		for(let i = 0; i < this.props.nowStep; ++i) {
-			this.state.light[i] = true;
-		}
-	}
+    componentWillMount() {
+        // console.log(this.props.nowStep);
+        // for (let i = 0; i < this.props.nowStep; ++i) {
+        //     this.state.light[i] = true;
+        // }
+        this.state.light[this.props.nowStep-1] = true;
+    }
 
-	render() {
-		let light = this.state.light;
-		
-		const divStyle = (order)=> {
-			return {
-				height: '100px',
-				width: '100px',
-			  	color: 'blue',
-			  	margin: '2px',
-			  	float: 'left',
-			  	cursor: 'pointer',
-			  	background: light[order] ? 'yellow' : 'grey'
-			}
-		}
+    render() {
+        let light = this.state.light;
 
-		const stateStyle = {
-			height: '100px',
-			width: '100%'
-		}
+        const divStyle = (order) => {
+            return {
+                background: light[order] ? 'yellow' : 'lightgrey'
+            };
+        };
 
-		const clear = {
-			clear: 'both'
-		}
+        
+        // const { goJumpStep } = this.props;
+        // console.log('--', goJumpStep);
+        return (
+            <div>				
+				<Nav bsStyle="pills" justified activeKey={2} onSelect={this.handleSelect}>
+                    <NavItem eventKey={1} href="#">Home</NavItem>
+                    <NavItem eventKey={2} href="#">Patent</NavItem>
+                    <NavItem eventKey={3} href="#">Trademark</NavItem>
+                    <NavItem eventKey={4} href="#">Copyright</NavItem>
+                    <NavItem eventKey={5} href="#">Support</NavItem>
+                    <NavItem eventKey={6} href="#">My Account</NavItem>
+                </Nav>
 
-		const {goJumpStep} = this.props;
-		console.log('--', goJumpStep);
-		return (
-			<div className="state-light" style={stateStyle}>
-				<div style={divStyle(0)} onClick={()=> {goJumpStep && goJumpStep(1)}}></div>
-				<div style={divStyle(1)} onClick={()=> {goJumpStep && goJumpStep(2)}}></div>
-				<div style={divStyle(2)} onClick={()=> {goJumpStep && goJumpStep(3)}}></div>
-				<div style={divStyle(3)} onClick={()=> {goJumpStep && goJumpStep(4)}}></div>
-				<div style={divStyle(4)}></div>
-				<div style={clear}/>
+
+				<div className="state-light">
+					<div className="light" style={divStyle(0)}>
+						<div className="content">step 1</div>
+					</div>
+					<div className="light" style={divStyle(1)}>
+						<div className="content">step 2</div>
+					</div>
+					<div className="light" style={divStyle(2)}>
+						<div className="content">step 3</div>
+					</div>
+					<div className="light" style={divStyle(3)}>
+						<div className="content">step 4</div>
+					</div>
+					<div className="light" style={divStyle(4)}>
+						<div className="content">step 5</div>
+					</div>
+                    <div className="light" style={divStyle(5)}>
+                        <div className="content">step 6</div>
+                    </div>
+				</div>
 			</div>
-		);
-	}
+        );
+    }
 }

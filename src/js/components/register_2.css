@@ -1,0 +1,31 @@
+ .patentType {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid;
+    text-align: center;
+ }
+.patentType .choice {
+    width: 30%;
+    margin: auto;
+    text-align: left;
+}
+
+.patentYear {
+    /*border-top: 1px solid;*/
+    /*border-bottom: 1px solid;*/
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+.feeTables {
+    width: 92%;
+    min-height: 180px;
+    margin: auto;
+    text-align: center;
+ }
+.feeTable {
+    width: 32%;
+    margin: 3px;
+    display: inline-block;
+}
