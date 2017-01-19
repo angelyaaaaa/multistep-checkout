@@ -9,24 +9,27 @@ export default class Register3 extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = { 
-			// dateCont: dateContJson[0]
+			values: {}
 		};
+		this.handleRadioChange = this.handleRadioChange.bind(this);
 		this.saveAndContinue = this.saveAndContinue.bind(this);
 		this.backStep = this.backStep.bind(this);
+	}
+
+	handleRadioChange(e) {
+		let newValues = this.state.values;
+		const key = e.target.name;
+		const value = e.target.value;
+
+		newValues[key] = value;
+		this.setState({values: newValues});
+		// console.log(e.target);
 	}
 
 
 	saveAndContinue(e) {
 		e.preventDefault();
-
-		// Get values via this.refs
-		// var data = {
-		//   name     : this.refs.name.getDOMNode().value,
-		//   password : this.refs.password.getDOMNode().value,
-		//   email    : this.refs.email.getDOMNode().value,
-		// }
-
-		// this.props.saveValues(data)
+		this.props.saveValues(this.state.values);
 		this.props.goNextStep();
 	}
 
@@ -44,10 +47,10 @@ export default class Register3 extends React.Component {
 					<div className="purpose">
 						<label>Purpose</label>
 						
-						<FormGroup className="choice">
-							<Radio name="purpose"> For myself</Radio>
-							<Radio name="purpose"> For enterprise</Radio>
-							<Radio name="purpose"> For others</Radio>
+						<FormGroup className="choice" id="patentType" onChange={this.handleRadioChange}>
+							<Radio name="purpose" value="myself"> For myself</Radio>
+							<Radio name="purpose" value="enterprise"> For enterprise</Radio>
+							<Radio name="purpose" value="others"> For others</Radio>
 						</FormGroup>
 					</div>
 					

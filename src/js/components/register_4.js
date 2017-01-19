@@ -10,9 +10,11 @@ export default class Register4 extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = { 
+			values: {
+				certificate: './freepik.jpg',
+				frontPage: './freepik.jpg'
+			},
 			files: [null, null],
-			url: ['', '']
-			// dateCont: dateContJson[0]
 		};
 		this.saveAndContinue = this.saveAndContinue.bind(this);
 		this.backStep = this.backStep.bind(this);
@@ -25,30 +27,29 @@ export default class Register4 extends React.Component {
 		let newFile = this.state.files;
 		newFile[0] = file[0];
 		this.setState({
-		  	files: newFile
+			files: newFile
 		});
 
-		// let newUrl = file.
-		console.log(file);
-		// let req = request.post('/upload');
-		//  files.forEach((file)=> {
-		//      req.attach(file.name, file);
-		//  });
-		//  req.end(callback);
+		// -----------------------------------------
+		let newValues = this.state.values;
+		newValues['certificate'] = file[0].preview;
+		this.setState({values: newValues});
+
 	}
 
 	onDrop2(file) {
 		let newFile = this.state.files;
 		newFile[1] = file[0];
 		this.setState({
-		  	files: newFile
+			files: newFile
 		});
 
-		// let req = request.post('/upload');
-		//  files.forEach((file)=> {
-		//      req.attach(file.name, file);
-		//  });
-		//  req.end(callback);
+
+		// -----------------------------------------
+		let newValues = this.state.values;
+		newValues['frontPage'] = file[0].preview;
+		this.setState({values: newValues});
+		
 	}
 
 	onOpenClick() {
@@ -57,21 +58,15 @@ export default class Register4 extends React.Component {
 
 	backToFirst(e) {
 		e.preventDefault();
+		this.props.collectValues();
 		this.props.goFirst();
 	}
 
 	saveAndContinue(e) {
 		e.preventDefault();
-
-		// Get values via this.refs
-		// var data = {
-		//   name     : this.refs.name.getDOMNode().value,
-		//   password : this.refs.password.getDOMNode().value,
-		//   email    : this.refs.email.getDOMNode().value,
-		// }
-
-		// this.props.saveValues(data)
+		this.props.saveValues(this.state.values);
 		this.props.goNextStep();
+		this.props.collectValues();
 	}
 
 	backStep(e) {
@@ -86,7 +81,7 @@ export default class Register4 extends React.Component {
 					<StateLight nowStep={4}></StateLight><br/>
 					
 					<div className="patentCertif">
-						<Dropzone ref="dropzone" onDrop={this.onDrop1} className="dropZone" activeClassName="active dropZone">
+						<Dropzone id="certificate" ref="dropzone" onDrop={this.onDrop1} className="dropZone" activeClassName="active dropZone">
 							{this.state.files[0]
 								? <img src={this.state.files[0].preview} className="preview"/>
 								: <img src='./download.png' className="downloadIcon"/>
@@ -95,7 +90,7 @@ export default class Register4 extends React.Component {
 
 						<div id="dropSep">&</div>
 
-						<Dropzone ref="dropzone" onDrop={this.onDrop2} className="dropZone" activeClassName="active dropZone">
+						<Dropzone id="frontPage" ref="dropzone" onDrop={this.onDrop2} className="dropZone" activeClassName="active dropZone">
 							{this.state.files[1]
 								? <img src={this.state.files[1].preview} className="preview"/>
 								: <img src='./download.png' className="downloadIcon"/>

@@ -14,17 +14,16 @@ class App extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = {
-			step: 1			           
+			step: 1,
+			register: {},
+			values: []	           
 		};
-		this.handleSelect = this.handleSelect.bind(this);
 		this.goNextStep = this.goNextStep.bind(this);
 		this.goPreviousStep = this.goPreviousStep.bind(this);
 		this.goJumpStep = this.goJumpStep.bind(this);
 		this.goFirst = this.goFirst.bind(this);
-	}
-
-	handleSelect(index, last) {
-		// console.log('Selected tab: ' + index + ', Last tab: ' + last);
+		this.saveValues = this.saveValues.bind(this);
+		this.collectValues = this.collectValues.bind(this);
 	}
 
 	componentWillMount() {
@@ -59,24 +58,48 @@ class App extends React.Component {
 		this.setState({step: 1});
 	}
 
+	saveValues(values) {
+		let newRegister = this.state.register;
+		for(let key in values) {
+			newRegister[key] = values[key];
+		}
+		this.setState({register: newRegister});
+		console.log(this.state.register);
+	}
+
+	collectValues() {
+		let newValues = this.state.values;
+		newValues.push(this.state.register);
+
+
+		this.setState({
+			values: newValues,
+			register: {}
+		});
+		console.log(this.state);
+	}
+
 	render() {
 		// console.log('App render:', this.state.step);
 		switch (this.state.step) {
 			case 1:
 				return <Register1 
 							goNextStep={this.goNextStep}
+							saveValues={this.saveValues}
 						/>;
 			case 2:
 				return <Register2 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
 							goJumpStep={this.goJumpStep}
+							saveValues={this.saveValues}
 						/>;
 			case 3:
 				return <Register3 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
-							goJumpStep={this.goJumpStep}							
+							goJumpStep={this.goJumpStep}
+							saveValues={this.saveValues}
 						/>;
 			case 4:
 				return <Register4 
@@ -84,15 +107,19 @@ class App extends React.Component {
 							goPreviousStep={this.goPreviousStep}
 							goJumpStep={this.goJumpStep}
 							goFirst={this.goFirst}
+							saveValues={this.saveValues}
+							collectValues={this.collectValues}
 						/>;
 			case 5:
 				return <Register5 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
+							saveValues={this.saveValues}
 						/>;    
 			case 6:				   			        
 				return <MyCart 
 							goNextStep={this.goNextStep}
+							values={this.state.values}
 						/>;		
 			case 7:
 				return <Checkout/>;

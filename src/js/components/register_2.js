@@ -11,24 +11,37 @@ export default class Register2 extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = { 
-			// dateCont: dateContJson[0]
+			values: {}
 		};
+		this.handleRadioChange = this.handleRadioChange.bind(this);
+		this.handleSelectChange = this.handleSelectChange.bind(this);
 		this.saveAndContinue = this.saveAndContinue.bind(this);
 		this.backStep = this.backStep.bind(this);
 	}
 
+	handleRadioChange(e) {
+		let newValues = this.state.values;
+		const key = e.target.name;
+		const value = e.target.value;
+
+		newValues[key] = value;
+		this.setState({values: newValues});
+		// console.log(e.target);
+	}
+
+	handleSelectChange(e) {
+		let newValues = this.state.values;
+		const key = e.target.id;
+		const value = e.target.value;
+
+		newValues[key] = value;
+		this.setState({values: newValues});
+		// console.log(e.target);
+	}
 
 	saveAndContinue(e) {
 		e.preventDefault();
-
-		// Get values via this.refs
-		// var data = {
-		//   name     : this.refs.name.getDOMNode().value,
-		//   password : this.refs.password.getDOMNode().value,
-		//   email    : this.refs.email.getDOMNode().value,
-		// }
-
-		// this.props.saveValues(data)
+		this.props.saveValues(this.state.values);
 		this.props.goNextStep();
 	}
 
@@ -41,22 +54,22 @@ export default class Register2 extends React.Component {
 		return (
 			<div className="page">
 				<div className="comment-list">
-					<StateLight nowStep={2} goJumpStep={this.props.goJumpStep}></StateLight><br/>
+					<StateLight nowStep={2}></StateLight><br/>
 
 					<div className="patentType">
 						<label>Order Condition</label><br/>
 
-				    
-						<FormGroup className="choice">
-					      	<Radio name="patentType"> Normal</Radio>
-					      	<Radio name="patentType"> Urgent ( deadline within 7 days)</Radio>
-					      	<Radio name="patentType"> Expired</Radio>
-					    </FormGroup>
+						<FormGroup className="choice" id="patentType" onChange={this.handleRadioChange}>
+							<Radio name="patentType" value="normal"> Normal</Radio>
+							<Radio name="patentType" value="urgent"> Urgent ( deadline within 7 days)</Radio>
+							<Radio name="patentType" value="expired"> Expired</Radio>
+						</FormGroup>
 					</div>
 
 					<div className="patentYear">
 						<label>Patent Year</label>
-						<select>
+						<select id="patentYear" onChange={this.handleSelectChange}>
+							<option value="">-- Patent Year --</option>
 							<option value="volvo">Volvo</option>
 							<option value="saab">Saab</option>
 							<option value="mercedes">Mercedes</option>

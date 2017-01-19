@@ -10,23 +10,30 @@ export default class Register1 extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = { 
+			values: {}
 			// dateCont: dateContJson[0]
 		};
 		this.saveAndContinue = this.saveAndContinue.bind(this);
+		this.handleSelectChange = this.handleSelectChange.bind(this);
 	}
 
 
+
+
+
+	handleSelectChange(e) {
+		let newValues = this.state.values;
+		const key = e.target.id;
+		const value = e.target.value;
+
+		newValues[key] = value;
+		this.setState({values: newValues});
+		// console.log(this.state.values);
+	}
+
 	saveAndContinue(e) {
 		e.preventDefault();
-
-		// Get values via this.refs
-		// var data = {
-		//   name     : this.refs.name.getDOMNode().value,
-		//   password : this.refs.password.getDOMNode().value,
-		//   email    : this.refs.email.getDOMNode().value,
-		// }
-
-		// this.props.saveValues(data)
+		this.props.saveValues(this.state.values);
 		this.props.goNextStep();
 	}
 
@@ -37,9 +44,9 @@ export default class Register1 extends React.Component {
 					<StateLight nowStep={1} ></StateLight><br/>
 					<div className="choices">
 						<span className="choice">	
-							<label>Goverment</label>
-							<select id="goverment">
-								<option value="init">-- Goverment --</option>
+							<label>Government</label>
+							<select id="government" onChange={this.handleSelectChange}>
+								<option value="">-- Goverment --</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
@@ -50,8 +57,8 @@ export default class Register1 extends React.Component {
 
 						<span className="choice">
 							<label>My Currency</label>
-							<select id="myCurrency">
-								<option value="init">-- My Currency--</option>
+							<select id="myCurrency" onChange={this.handleSelectChange}>
+								<option value="">-- My Currency--</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
@@ -61,8 +68,8 @@ export default class Register1 extends React.Component {
 
 						<span className="choice">
 							<label>Patent Type</label>
-							<select id="patentType">
-								<option value="init">-- Patent Type --</option>
+							<select id="patentType" onChange={this.handleSelectChange}>
+								<option value="">-- Patent Type --</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
