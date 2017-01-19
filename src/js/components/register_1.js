@@ -34,11 +34,12 @@ export default class Register1 extends React.Component {
 		return (
 			<div className="page">
 				<div className="comment-list">
-					<StateLight nowStep={1}></StateLight><br/>
+					<StateLight nowStep={1} ></StateLight><br/>
 					<div className="choices">
 						<span className="choice">	
 							<label>Goverment</label>
-							<select>
+							<select id="goverment">
+								<option value="init">-- Goverment --</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
@@ -48,8 +49,9 @@ export default class Register1 extends React.Component {
 
 
 						<span className="choice">
-							<label>MyCurrency</label>
-							<select>
+							<label>My Currency</label>
+							<select id="myCurrency">
+								<option value="init">-- My Currency--</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
@@ -59,7 +61,8 @@ export default class Register1 extends React.Component {
 
 						<span className="choice">
 							<label>Patent Type</label>
-							<select>
+							<select id="patentType">
+								<option value="init">-- Patent Type --</option>
 								<option value="volvo">Volvo</option>
 								<option value="saab">Saab</option>
 								<option value="mercedes">Mercedes</option>
@@ -161,7 +164,7 @@ export default class Register1 extends React.Component {
 					</div>
 
 					<div className="pageCtrl">
-						<button className="float-right" id="nextStep" onClick={ this.saveAndContinue }>Save and Continue</button>
+						<button className="float-right" id="nextStep" onClick={ this.saveAndContinue }>Continue</button>
 
 						<div className="float-clear"></div>
 					</div>

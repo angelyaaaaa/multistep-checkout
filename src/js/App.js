@@ -4,7 +4,9 @@ import Register2 from './components/register_2';
 import Register3 from './components/register_3';
 import Register4 from './components/register_4';
 import Register5 from './components/register_5';
-import Register6 from './components/register_6';
+// import Register6 from './components/register_6';
+import MyCart from './components/myCart';
+import Checkout from './components/checkout';
 
 
 
@@ -88,11 +90,13 @@ class App extends React.Component {
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
 						/>;    
-			case 6:
-				return <Register6
-							goPreviousStep={this.goPreviousStep}
-						/>;    			        
-						
+			case 6:				   			        
+				return <MyCart 
+							goNextStep={this.goNextStep}
+						/>;		
+			case 7:
+				return <Checkout/>;
+					
 		}
 	}
 }

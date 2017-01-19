@@ -1,13 +1,13 @@
- .page {
-    border: 1px solid;
-    width: 70vw;
-    min-height: 95vh;
-    margin: auto;
- }
+.myCart {
+	margin: 10px
+}
 
-.pageCtrl {
-	width: 90%;
+.checkoutDetail {
+	width: 95%;
 	margin: auto;
-	margin-top: 3px;
-	margin-bottom: 3px;
+}
+
+.paymentType {
+	width: 95%;
+	margin: auto;
 }

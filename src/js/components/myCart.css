@@ -1,0 +1,29 @@
+.myCart {
+	width: 95%;
+	margin: auto;
+}
+
+.cart {
+
+}
+
+.nextList {
+
+}
+
+.pretentPic {
+	width: 90px;
+	height: 120px;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+.ctrlBtn {
+	width: 100%;
+}
+
+.list {
+	border-bottom: 1px solid;	
+}
