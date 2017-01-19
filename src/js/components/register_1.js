@@ -161,7 +161,7 @@ export default class Register1 extends React.Component {
 					</div>
 
 					<div className="pageCtrl">
-						<button className="float-right" onClick={ this.saveAndContinue }>Save and Continue</button>
+						<button className="float-right" id="nextStep" onClick={ this.saveAndContinue }>Save and Continue</button>
 
 						<div className="float-clear"></div>
 					</div>

@@ -26,7 +26,8 @@ class App extends React.Component {
 	}
 
 	componentWillMount() {
-		const initStep = location.hash == '' ? 1 : (parseInt(location.hash.slice(5)))
+		// console.log('hash:', window.location.hash);
+		const initStep = window.location.hash == '' ? 1 : (parseInt(window.location.hash.slice(5)));
 		this.setState({step: initStep});
 	}
 
@@ -57,41 +58,42 @@ class App extends React.Component {
 	}
 
 	render() {
-
+		// console.log('App render:', this.state.step);
 		switch (this.state.step) {
 			case 1:
 				return <Register1 
 							goNextStep={this.goNextStep}
-						/>
+						/>;
 			case 2:
 				return <Register2 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
 							goJumpStep={this.goJumpStep}
-						/>
+						/>;
 			case 3:
 				return <Register3 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
 							goJumpStep={this.goJumpStep}							
-						/>
+						/>;
 			case 4:
 				return <Register4 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
 							goJumpStep={this.goJumpStep}
 							goFirst={this.goFirst}
-						/>
+						/>;
 			case 5:
 				return <Register5 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
-						/>    
+						/>;    
 			case 6:
 				return <Register6
 							goPreviousStep={this.goPreviousStep}
-						/>    			        
-		};
+						/>;    			        
+						
+		}
 	}
 }
 

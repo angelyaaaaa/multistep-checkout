@@ -3,11 +3,12 @@ import {Nav, NavItem } from 'react-bootstrap';
 import '../commonUsed.css';
 import './light.css';
 
-export default class StateLight extends React.Component {
+class StateLight extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            light: [false, false, false, false, false]
+            light: [false, false, false, false, false],
+            isLightHide: ''
                 // dateCont: dateContJson[0]
         };
         // this.jumpToAnother = this.jumpToAnother.bind(this);
@@ -18,7 +19,11 @@ export default class StateLight extends React.Component {
         // for (let i = 0; i < this.props.nowStep; ++i) {
         //     this.state.light[i] = true;
         // }
-        this.state.light[this.props.nowStep-1] = true;
+        const nowStep = this.props.nowStep;
+        if(nowStep != 0)
+            this.state.light[nowStep-1] = true;
+        else
+            this.setState({isLightHide: 'hide'});
     }
 
     render() {
@@ -30,12 +35,12 @@ export default class StateLight extends React.Component {
             };
         };
 
-        
+                
         // const { goJumpStep } = this.props;
         // console.log('--', goJumpStep);
         return (
             <div>				
-				<Nav bsStyle="pills" justified activeKey={2} onSelect={this.handleSelect}>
+				<Nav bsStyle="pills" justified activeKey={this.props.nowPage} onSelect={this.handleSelect}>
                     <NavItem eventKey={1} href="#">Home</NavItem>
                     <NavItem eventKey={2} href="#">Patent</NavItem>
                     <NavItem eventKey={3} href="#">Trademark</NavItem>
@@ -45,7 +50,7 @@ export default class StateLight extends React.Component {
                 </Nav>
 
 
-				<div className="state-light">
+				<div className={'state-light ' + this.state.isLightHide}>
 					<div className="light" style={divStyle(0)}>
 						<div className="content">step 1</div>
 					</div>
@@ -69,3 +74,9 @@ export default class StateLight extends React.Component {
         );
     }
 }
+
+StateLight.defaultProps = {
+  nowPage: 2
+};
+
+export default StateLight;
