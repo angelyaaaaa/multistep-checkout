@@ -59,11 +59,11 @@ export default class Register5 extends React.Component {
 
 
 							<FormGroup>
-						      	<Checkbox> Visa</Checkbox>
-						      	<Checkbox> Master Card</Checkbox>
-						      	<Checkbox> AE</Checkbox>
-						      	<Checkbox> China UnionPay</Checkbox>						      
-    						</FormGroup>
+								<Checkbox> Visa</Checkbox>
+								<Checkbox> Master Card</Checkbox>
+								<Checkbox> AE</Checkbox>
+								<Checkbox> China UnionPay</Checkbox>						      
+							</FormGroup>
 
 						</FormGroup>
 					</div>

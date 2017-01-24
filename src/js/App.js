@@ -91,21 +91,18 @@ class App extends React.Component {
 				return <Register2 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
-							goJumpStep={this.goJumpStep}
 							saveValues={this.saveValues}
 						/>;
 			case 3:
 				return <Register3 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
-							goJumpStep={this.goJumpStep}
 							saveValues={this.saveValues}
 						/>;
 			case 4:
 				return <Register4 
 							goNextStep={this.goNextStep}
 							goPreviousStep={this.goPreviousStep}
-							goJumpStep={this.goJumpStep}
 							goFirst={this.goFirst}
 							saveValues={this.saveValues}
 							collectValues={this.collectValues}

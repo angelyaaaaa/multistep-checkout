@@ -1,33 +1,41 @@
+// tools
 import React from 'react';
+import { renderComponent, expect, shallowComponent, shallowExpect } from '../test-helper';
+import { shallow } from 'enzyme';
+
+// components
 import { Tabs, Tab, TabList, TabPanel } from 'react-tabs';
 import {Table} from 'react-bootstrap';
-import StateLight from './light';
-import './page.css';
-import './myCart.css';
+import MyCart from '../../src/js/components/myCart';
+import StateLight from '../../src/js/components/light';
 
 
-class MyCart extends React.Component {
-	constructor(props, context) {
-		super(props, context);
-		this.state = {
-			price: 0
+describe('MyCart', ()=> {
+	let component; //jq element
+	let element;   
+	let shallowComp;
+
+	beforeEach(()=> {
+		shallowComp = shallowComponent(MyCart);
+		component = renderComponent(MyCart);
+		element = shallow(<MyCart/>);
+	});
+	
+	it('has state-light and its props is right', ()=> {
+		expect(element.find('StateLight')).to.have.length(1);
+		expect(element.find('StateLight').prop('nowStep')).to.equal(0);
+		expect(element.find('StateLight').prop('nowPage')).to.equal(6);
+	});
+		
+	it('final check shallow html code', ()=> {
+		const props = {
+			goNextSte: ()=> {},
+			values: []
 		};
-		this.checkout = this.checkout.bind(this);
-	}
+		const state = {price: 0};
 
-	componentWillMount() {
-		const newPrice = 2000 * this.props.values.length;
-		this.setState({price: newPrice});
-	}
-
-	checkout(e) {
-		e.preventDefault();
-		this.props.goNextStep();
-	}
-
-	render() {
-
-		return (
+		shallowComp = shallowComponent(MyCart, props, state);
+		const expectedElement = 
 			<div className="page">
 				<StateLight nowStep={0} nowPage={6}></StateLight>
 				<h1>My Cart</h1>
@@ -55,7 +63,7 @@ class MyCart extends React.Component {
 									</tr>
 								</thead>
 								<tbody>
-									{this.props.values.map((data, idx)=> {
+									{props.values.map((data, idx)=> {
 										
 										return(
 											<tr id={'detail' + idx}>
@@ -79,7 +87,7 @@ class MyCart extends React.Component {
 										<td></td>
 										<td></td>
 										<td></td>
-										<td>{this.state.price}</td>
+										<td>{state.price}</td>
 										<td></td>
 									</tr>						    	  	
 								</tbody>
@@ -125,16 +133,11 @@ class MyCart extends React.Component {
 				</Tabs>
 
 				<div className="pageCtrl">
-					<button className="float-right" onClick={ this.checkout }>Checkout</button>
+					<button className="float-right" onClick={ ()=> {} }>Checkout</button>
 					<div className="float-clear"></div>
 				</div>    
-			</div>
-		);
-	}
-}
+			</div>;
 
-MyCart.defaultProps = {
-	values: []
-};
-
-export default MyCart;
+		shallowExpect(shallowComp).toEqualJSX(expectedElement);
+	});
+});

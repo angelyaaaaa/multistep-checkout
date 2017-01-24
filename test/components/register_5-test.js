@@ -4,29 +4,33 @@ import { renderComponent, expect, shallowComponent, shallowExpect } from '../tes
 import { shallow } from 'enzyme';
 
 // components
-import {Table} from 'react-bootstrap';
-import Register1 from '../../src/js/components/register_1';
+import {Table, FormGroup, Radio} from 'react-bootstrap';
+import Register2 from '../../src/js/components/register_2';
 import StateLight from '../../src/js/components/light';
 
 
-describe('Register1', ()=> {
+describe('Register2', ()=> {
 	let component; //jq element
 	let element;   
 	let shallowComp;
 
 	beforeEach(()=> {
-		shallowComp = shallowComponent(Register1);
-		component = renderComponent(Register1);
-		element = shallow(<Register1/>);
+		shallowComp = shallowComponent(Register2);
+		component = renderComponent(Register2);
+		element = shallow(<Register2/>);
 	});
 	
 	it('has state-light and its props is right', ()=> {
 		expect(element.find('StateLight')).to.have.length(1);
-		expect(element.find('StateLight').prop('nowStep')).to.equal(1);
+		expect(element.find('StateLight').prop('nowStep')).to.equal(2);
 	});
-	
-	it('has 3 select buttons',()=> {
-		expect(element.find('.comment-list').children().find('select')).to.have.length(3);
+
+	it('has 1 radio button and 3 choices',()=> {
+		expect(element.find('.comment-list FormGroup').children().find('Radio')).to.have.length(3);
+	});
+
+	it('has 1 select button', ()=> {
+		expect(element.find('.comment-list').children().find('select')).to.have.length(1);
 	});
 
 	it('has 3 tables and named feeTable', ()=> {
@@ -36,51 +40,36 @@ describe('Register1', ()=> {
 	it('final check shallow html code', ()=> {
 		const props = {
 			goNextSte: ()=> {},
+			goPreviousStep: ()=> {},
 			saveValues: ()=> {}
 		};
-		shallowComp = shallowComponent(Register1, props);
+		shallowComp = shallowComponent(Register2, props);
 		const expectedElement = 
 			<div className="page">
 				<div className="comment-list">
-					<StateLight nowStep={1} ></StateLight><br/>
-					<div className="choices">
-						<span className="choice">	
-							<label>Government</label>
-							<select id="government" onChange={()=> {}}>
-								<option value="">-- Goverment --</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="mercedes">Mercedes</option>
-								<option value="audi">Audi</option>
-							</select>
-						</span>
+					<StateLight nowStep={2}></StateLight><br/>
 
+					<div className="patentType">
+						<label>Order Condition</label><br/>
 
-						<span className="choice">
-							<label>My Currency</label>
-							<select id="myCurrency" onChange={()=> {}}>
-								<option value="">-- My Currency--</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="mercedes">Mercedes</option>
-								<option value="audi">Audi</option>
-							</select>						
-						</span>
-
-						<span className="choice">
-							<label>Patent Type</label>
-							<select id="patentType" onChange={()=> {}}>
-								<option value="">-- Patent Type --</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="mercedes">Mercedes</option>
-								<option value="audi">Audi</option>
-							</select> 						
-						</span>
-						
+						<FormGroup className="choice" id="patentType" onChange={()=> {}}>
+							<Radio name="patentType" value="normal"> Normal</Radio>
+							<Radio name="patentType" value="urgent"> Urgent ( deadline within 7 days)</Radio>
+							<Radio name="patentType" value="expired"> Expired</Radio>
+						</FormGroup>
 					</div>
 
-
+					<div className="patentYear">
+						<label>Patent Year</label>
+						<select id="patentYear" onChange={()=> {}}>
+							<option value="">-- Patent Year --</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="mercedes">Mercedes</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+					
 					<div className="feeTables">
 						<Table striped bordered condensed hover className="feeTable">
 							<thead>
@@ -172,9 +161,10 @@ describe('Register1', ()=> {
 					</div>
 
 					<div className="pageCtrl">
-						<button className="float-right" id="nextStep" onClick={ ()=> {} }>Continue</button>
+						<button className="float-left" onClick={ ()=> {} }>Back Step</button>
+						<button className="float-right" onClick={ ()=> {} }>Save and Continue</button>
 						<div className="float-clear"></div>
-					</div>
+					</div>	  
 				</div>
 			</div>;
 

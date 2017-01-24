@@ -112,8 +112,8 @@ export default class Register4 extends React.Component {
 								label="Application Number:"
 							/>
 							<FieldGroup
-							  type="text"
-							  label="Certification Number:"
+								type="text"
+								label="Certification Number:"
 							/>
 
 						</FormGroup>
@@ -142,3 +142,5 @@ function FieldGroup({ id, label, help, ...props }) {
 		</FormGroup>
 	);
 }
+
+export {FieldGroup};

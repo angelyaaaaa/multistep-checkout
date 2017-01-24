@@ -42,7 +42,7 @@ export default class Register3 extends React.Component {
 		return (
 			<div className="page">
 				<div className="comment-list">
-					<StateLight nowStep={3} goJumpStep={this.props.goJumpStep}></StateLight><br/>
+					<StateLight nowStep={3}></StateLight><br/>
 
 					<div className="purpose">
 						<label>Purpose</label>

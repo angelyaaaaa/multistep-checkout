@@ -18,9 +18,6 @@ export default class Register1 extends React.Component {
 	}
 
 
-
-
-
 	handleSelectChange(e) {
 		let newValues = this.state.values;
 		const key = e.target.id;
